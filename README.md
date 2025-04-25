@@ -1,40 +1,40 @@
 # 📜 **Script info.sh**
 
-## **Descrição**
+## **Description**
 
-O script `info.sh` resolve endereços IP de um domínio fornecido como argumento e coleta informações detalhadas sobre os endereços encontrados. Ele gera dois arquivos de saída:
-- Um arquivo **CSV** com informações sobre os IPs encontrados.
-- Um arquivo **JSON** com dados detalhados para cada IP.
+The info.sh script resolves IP addresses for a domain provided as an argument and collects detailed information about the found addresses. It generates two output files:
+- A CSV file with information about the found IPs.
+- A JSON file with detailed data for each IP.
 
-Além disso, o script exibe informações sobre a sua máquina local e o resultado da resolução de IPs do domínio especificado.
+Additionally, the script displays information about your local machine and the result of the IP resolution for the specified domain.
 
 ---
 
-## **Pré-requisitos** ⚙️
+## **Prerequisites** ⚙️
 
-- **Sistemas suportados**: Linux, macOS ou Windows com subsistema de Linux (WSL).
-- **Ferramenta `dig` ou `nslookup`**: O script utiliza uma dessas ferramentas para resolver os IPs do domínio. Caso esteja no Linux e precise instalar o `dig`, use o comando:
+- **Supported Systems**: Linux, macOS, or Windows with the Linux Subsystem (WSL).
+- **`dig` or `nslookup` tool**: The script uses one of these tools to resolve the domain's IPs. If you're on Linux and need to install `dig`, use the following command:
 
 ```bash
 sudo apt install dnsutils
 
 ```
 
-## **Instalação** 🔧
+## **Installation** 🔧
 
-### 1. **Permissões de execução**:
-Antes de rodar o script, é necessário garantir que ele tenha permissão de execução. Use o seguinte comando no terminal:
+### 1. **Execution Permissions**:
+Before running the script, you need to ensure it has execution permissions. Use the following command in the terminal:
 
 ```bash
 chmod +x info.sh
 ```
-### 2. **Executando o script**:	
-Para executar o script, utilize o seguinte comando no terminal, substituindo `dominio.com` pelo domínio desejado:
+### 2. **Running the script**:	
+To run the script, use the following command in the terminal, replacing `dominio.com` with the desired domain:
 
 ```bash	
 ./info.sh dominio.com
 ```
-### 3. **Saída**:
-Após a execução, o script irá gerar dois arquivos:
-- `ips.csv`: Contém informações sobre os IPs encontrados.
-- `ips.json`: Contém dados detalhados para cada IP.
+### 3. **Output**:
+After execution, the script will generate two files:
+- `ips.csv`: Contains information about the found IPs.
+- `ips.json`: Contains detailed data for each IP.
