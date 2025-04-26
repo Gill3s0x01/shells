@@ -9,13 +9,44 @@ DOMAIN="$1"
 DATA_HORA=$(date '+%Y-%m-%d %H:%M:%S')
 OS=$(uname | tr '[:upper:]' '[:lower:]')
 
+# Definir pasta de resultados
+RESULTS_DIR="/c/Users/$(whoami)/Downloads/results"
+
+# Cria a pasta se não existir
+mkdir -p "$RESULTS_DIR"
+
 # Arquivos de saída
-CSV_FILE="ips_${DOMAIN}.csv"
-JSON_FILE="ips_${DOMAIN}.json"
+CSV_FILE="${RESULTS_DIR}/ips_${DOMAIN}.csv"
+JSON_FILE="${RESULTS_DIR}/ips_${DOMAIN}.json"
 
 # Inicia arquivos
+clear  
+cat << EOF
+   _                      _______                      _
+  _dMMMb._              .adOOOOOOOOOba.              _,dMMMb_
+ dP'  ~YMMb            dOOOOOOOOOOOOOOOb            aMMP~  `Yb
+ V      ~"Mb          dOOOOOOOOOOOOOOOOOb          dM"~      V
+          `Mb.       dOOOOOOOOOOOOOOOOOOOb       ,dM'
+           `YMb._   |OOOOOOOOOOOOOOOOOOOOO|   _,dMP'
+      __     `YMMM| OP'~"YOOOOOOOOOOOP"~`YO |MMMP'     __
+    ,dMMMb.     ~~' OO     `YOOOOOP'     OO `~~     ,dMMMb.
+ _,dP~  `YMba_      OOb      `OOO'      dOO      _aMMP'  ~Yb._
+
+             `YMMMM\`OOOo     OOO     oOOO'/MMMMP'
+     ,aa.     `~YMMb `OOOb._,dOOOb._,dOOO'dMMP~'       ,aa.
+   ,dMYYMba._         `OOOOOOOOOOOOOOOOO'          _,adMYYMb.
+  ,MP'   `YMMba._      OOOOOOOOOOOOOOOOO       _,adMMP'   `YM.
+  MP'        ~YMMMba._ YOOOOPVVVVVYOOOOP  _,adMMMMP~       `YM
+  YMb           ~YMMMM\`OOOOI`````IOOOOO'/MMMMP~           dMP
+   `Mb.           `YMMMb`OOOI,,,,,IOOOO'dMMMP'           ,dM'
+     `'                  `OObNNNNNdOO'                   `'
+                           `~OOOOO~'   Gill3s0x01
+
+EOF
+
 echo "IP,Tipo,Org,Localização" > "$CSV_FILE"
 echo "[" > "$JSON_FILE"
+
 
 echo "📅 Data e Hora: $DATA_HORA"
 echo "➡️  Sistema detectado: $OS"
@@ -101,7 +132,8 @@ function consulta_ip() {
   echo "  }," >> "$JSON_FILE"
 
   # Se quiser exportar o JSON bruto de cada IP:
-  echo "$INFO" > "whois_${IP}.json"
+  # echo "$INFO" > "whois_${IP}.json"
+  # echo "$INFO" > "${RESULTS_DIR}/whois_${IP}.json"
 }
 
 # Processa IPv4
