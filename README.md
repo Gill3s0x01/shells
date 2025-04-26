@@ -1,5 +1,15 @@
 # 📜 **Script info.sh**
-
+```
+              @@@@@@   @@@@@@           
+               @@       @@          
+                      @@                 
+                   @@@             
+T  H  E  (X)  G i l l 3 s 0 x 0 1       
+                   @@@         
+                 @@   @@     
+                @@      @@        
+              @@@@@@  @@@@@@ 
+```
 ## **Description**
 
 The info.sh script resolves IP addresses for a domain provided as an argument and collects detailed information about the found addresses. It generates two output files:
